@@ -61,3 +61,26 @@ print(cm2)
 print('pcasiz ve pcali')
 cm3 = confusion_matrix(y_pred,y_pred2)
 print(cm3)
+
+#LDA olarak gerceklestirilme denemem
+
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+
+lda = LDA(n_components = 2)
+
+X_train3 = lda.fit_transform(X_train, y_train)
+X_test3 = lda.transform(X_test)
+
+
+classifier3 = LogisticRegression(random_state=0)
+classifier3.fit(X_train3, y_train)
+
+y_pred3 = classifier3.predict(X_test3)
+
+print("gercek / lda ile")
+cm4 = confusion_matrix(y_test,y_pred3)
+print(cm4)
+
+print('pcasiz ve ldan li')
+cm5 = confusion_matrix(y_pred,y_pred3)
+print(cm5)
