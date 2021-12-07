@@ -1,2 +1,2 @@
 # MachineLearningDenemelerim
-MachineLearning deneme kodlarım ve csvler
+Machine Learning örneklerim ve data proccesing yaptığım cvs dosylaarım bu dosyaların içindedir
